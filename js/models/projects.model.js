@@ -5,12 +5,15 @@ export const PROJECTS = [
     description: "Aplikasi pencatatan keuangan berbasis Flutter dengan fitur pencatatan pemasukan, pengeluaran, dan manajemen data lokal.",
     tech: ["Flutter", "Dart", "SQLite", "Firebase"],
     images: [
-      "assets/images/projects/catatan-ai-4.jpg",
-      "assets/images/projects/catatan-ai-1.jpg",
-      "assets/images/projects/catatan-ai-2.jpg",
-      "assets/images/projects/catatan-ai-3.jpg"
+      "assets/images/projects/smartbudget1.jpeg",
+      "assets/images/projects/smartbudget2.jpeg",
+      "assets/images/projects/smartbudget3.jpeg",
+      "assets/images/projects/smartbudget4.jpeg",
+      "assets/images/projects/smartbudget5.jpeg",
+      "assets/images/projects/smartbudget6.jpeg",
+      "assets/images/projects/smartbudget7.jpeg",
     ],
-    repoUrl: "#"
+    repoUrl: "https://github.com/aqilahdaffa8/smart_budget"
   },
   {
     id: "catatan-ai",
