@@ -26,7 +26,7 @@ export function renderFooter(profile) {
   return `
   <footer class="border-t border-blueprint py-8">
     <div class="max-w-6xl mx-auto px-5 md:px-8 flex flex-col md:flex-row justify-between items-center gap-3 font-mono text-xs text-muted">
-      <p>© 2026 ${profile.name}.</p>
+      <p>© 2026 ${profile.name}</p>
       <a href="index.html#hero" class="accent hover:underline">↑ Kembali ke atas</a>
     </div>
   </footer>`;
