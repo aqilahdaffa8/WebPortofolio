@@ -15,6 +15,6 @@ export const PROFILE = {
     linkedin: "https://www.linkedin.com/in/aqilah-daffa-76290a3a4",
     email: "aqilahdaffa8@email.com"
   },
-  // Ganti "xxxxxxxx" dengan ID form dari Formspree Anda (formspree.io)
+ 
   formEndpoint: "https://formspree.io/f/xrenwlwl"
 };
