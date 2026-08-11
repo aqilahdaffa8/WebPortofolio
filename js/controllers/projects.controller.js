@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <section class="max-w-6xl mx-auto px-5 md:px-8 page-hero">
       <p class="font-mono text-xs accent mb-2">~/projects</p>
       <h1 class="font-display text-3xl md:text-4xl font-700 mb-4">Semua Proyek Mobile</h1>
-      <p class="text-muted max-w-xl mb-12">Kumpulan aplikasi mobile yang saya bangun menggunakan Flutter — dari manajemen keuangan hingga pencatatan berbasis AI.</p>
+      <p class="text-muted max-w-xl mb-12">Kumpulan aplikasi mobile yang saya bangun menggunakan Flutter.</p>
       ${renderProjectsGrid(PROJECTS)}
     </section>`;
 

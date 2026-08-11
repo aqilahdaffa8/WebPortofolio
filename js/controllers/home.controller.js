@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("contact-root").innerHTML = renderContact(PROFILE);
   initContactForm(PROFILE.formEndpoint);
 
-  // Featured preview — link ke halaman penuh
+  // Featured preview — hanya 2 proyek utama, sisanya di halaman penuh
   document.getElementById("projects-preview-root").innerHTML = `
     <section class="max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
       <p class="font-mono text-xs accent mb-2">~/projects</p>
       <div class="flex items-end justify-between mb-10 flex-wrap gap-3">
         <h2 class="font-display text-3xl md:text-4xl font-700">Proyek Mobile</h2>
-        <a href="projects.html" class="font-mono text-xs accent hover:underline">Lihat semua proyek →</a>
+        <a href="projects.html" class="font-mono text-xs accent hover:underline">Lihat lebih banyak →</a>
       </div>
-      ${renderProjectsGrid(PROJECTS)}
+      ${renderProjectsGrid(PROJECTS.slice(0, 2))}
     </section>`;
 
   document.getElementById("certificates-preview-root").innerHTML = `
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initTerminal("terminal-body", [
     { prefix: "$ ", text: "whoami", color: "var(--text-muted)" },
-    { prefix: "&gt; ", text: "Muhammad Aqilah — Mobile Developer", color: "var(--accent-2)" },
+    { prefix: "&gt; ", text: "Daffa Agdar — Mobile Developer", color: "var(--accent-2)" },
     { prefix: "$ ", text: "ls skills/", color: "var(--text-muted)" },
     { prefix: "&gt; ", text: "flutter  dart  firebase  supabase", color: "var(--accent)" },
     { prefix: "$ ", text: "status --check", color: "var(--text-muted)" },

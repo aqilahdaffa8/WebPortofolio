@@ -27,5 +27,19 @@ export const PROJECTS = [
       "assets/images/projects/catatan-ai-3.jpg"
     ],
     repoUrl: "https://github.com/aqilahdaffa8/Catatan_AI"
+  },
+  {
+    id: "cinemax",
+    title: "Cinemax",
+    description: "Aplikasi penjelajah katalog cinema untuk mencari judul film, melihat detail, dan mengeksplorasi referensi film.",
+    tech: ["Flutter", "Dart", "Shared Preferences", "TMDB API"],
+    images: [
+      "assets/images/projects/cinemax1.jpeg",
+      "assets/images/projects/cinemax2.jpeg",
+      "assets/images/projects/cinemax3.jpeg",
+      "assets/images/projects/cinemax4.jpeg",
+      "assets/images/projects/cinemax5.jpeg",
+    ],
+    repoUrl: "https://github.com/aqilahdaffa8/movie_explorer"
   }
 ];
