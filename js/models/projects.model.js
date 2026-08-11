@@ -3,7 +3,7 @@ export const PROJECTS = [
     id: "smart-budget",
     title: "Smart Budget",
     description: "Aplikasi pencatatan keuangan berbasis Flutter dengan fitur pencatatan pemasukan, pengeluaran, dan manajemen data lokal.",
-    tech: ["Flutter", "Dart", "SQLite", "Firebase"],
+    tech: ["Flutter", "Dart", "Firebase"],
     images: [
       "assets/images/projects/smartbudget1.jpeg",
       "assets/images/projects/smartbudget2.jpeg",
