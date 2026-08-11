@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initTerminal("terminal-body", [
     { prefix: "$ ", text: "whoami", color: "var(--text-muted)" },
-    { prefix: "&gt; ", text: "Daffa Agdar — Mobile Developer", color: "var(--accent-2)" },
+    { prefix: "&gt; ", text: "Muhammad Aqilah — Mobile Developer", color: "var(--accent-2)" },
     { prefix: "$ ", text: "ls skills/", color: "var(--text-muted)" },
     { prefix: "&gt; ", text: "flutter  dart  firebase  supabase", color: "var(--accent)" },
     { prefix: "$ ", text: "status --check", color: "var(--text-muted)" },
