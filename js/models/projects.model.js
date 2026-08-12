@@ -5,6 +5,7 @@ export const PROJECTS = [
     description: "Aplikasi pencatatan keuangan berbasis Flutter dengan fitur pencatatan pemasukan, pengeluaran, dan manajemen data lokal.",
     tech: ["Flutter", "Dart", "Firebase"],
     images: [
+      "assets/images/projects/smartbudget0.jpeg",
       "assets/images/projects/smartbudget1.jpeg",
       "assets/images/projects/smartbudget2.jpeg",
       "assets/images/projects/smartbudget3.jpeg",
@@ -34,6 +35,7 @@ export const PROJECTS = [
     description: "Aplikasi penjelajah katalog cinema untuk mencari judul film, melihat detail, dan mengeksplorasi referensi film.",
     tech: ["Flutter", "Dart", "Shared Preferences", "TMDB API"],
     images: [
+      "assets/images/projects/cinemax0.jpeg",
       "assets/images/projects/cinemax1.jpeg",
       "assets/images/projects/cinemax2.jpeg",
       "assets/images/projects/cinemax3.jpeg",
