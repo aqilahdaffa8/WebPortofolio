@@ -43,5 +43,22 @@ export const PROJECTS = [
       "assets/images/projects/cinemax5.jpeg",
     ],
     repoUrl: "https://github.com/aqilahdaffa8/movie_explorer"
-  }
+  },
+  {
+    id: "quickpos",
+    title: "QuickPOS",
+    description: "Aplikasi point-of-sale sederhana untuk manajemen transaksi toko.",
+    tech: ["Flutter", "Dart", "Hive"],
+    images: [
+      "assets/images/projects/quickpos1.jpeg",
+      "assets/images/projects/quickpos2.jpeg",
+      "assets/images/projects/quickpos3.jpeg",
+      "assets/images/projects/quickpos4.jpeg",
+      "assets/images/projects/quickpos5.jpeg",
+      "assets/images/projects/quickpos6.jpeg",
+      "assets/images/projects/quickpos7.jpeg",
+      "assets/images/projects/quickpos8.jpeg",
+    ],
+    repoUrl: "https://github.com/aqilahdaffa8/quickpos"
+  },
 ];

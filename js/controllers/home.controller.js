@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <section class="max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
       <p class="font-mono text-xs accent mb-2">~/projects</p>
       <div class="flex items-end justify-between mb-10 flex-wrap gap-3">
-        <h2 class="font-display text-3xl md:text-4xl font-700">Proyek Mobile</h2>
+        <h2 class="font-display text-3xl md:text-4xl font-700">Proyek Mobile dan Web</h2>
         <a href="projects.html" class="font-mono text-xs accent hover:underline">Lihat lebih banyak →</a>
       </div>
       ${renderProjectsGrid(PROJECTS.slice(0, 2))}
