@@ -47,8 +47,8 @@ export const PROJECTS = [
   {
     id: "quickpos",
     title: "QuickPOS",
-    description: "Aplikasi point-of-sale sederhana untuk manajemen transaksi toko.",
-    tech: ["Flutter", "Dart", "Hive"],
+    description: "Aplikasi kasir (POS) offline-first. Dilengkapi manajemen inventaris real-time dan integrasi cetak struk langsung ke printer thermal Bluetooth.",
+    tech: ["Flutter", "Dart", "SQLite", "Provider"],
     images: [
       "assets/images/projects/quickpos1.jpeg",
       "assets/images/projects/quickpos2.jpeg",
