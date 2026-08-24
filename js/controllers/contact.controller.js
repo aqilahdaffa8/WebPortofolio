@@ -9,7 +9,7 @@ export function initContactForm(endpoint) {
 
     if (!endpoint || endpoint.includes("xxxxxxxx")) {
       status.textContent = "Form belum terhubung — atur formEndpoint di profile.model.js dulu.";
-      status.style.color = "#F87171";
+      status.style.color = "#B91C1C";
       return;
     }
 
@@ -30,11 +30,11 @@ export function initContactForm(endpoint) {
         form.reset();
       } else {
         status.textContent = "Gagal mengirim. Coba lagi atau hubungi lewat email langsung.";
-        status.style.color = "#F87171";
+        status.style.color = "#B91C1C";
       }
     } catch (err) {
       status.textContent = "Gagal mengirim. Periksa koneksi internet Anda.";
-      status.style.color = "#F87171";
+      status.style.color = "#B91C1C";
     } finally {
       button.disabled = false;
       button.textContent = "Kirim Pesan";

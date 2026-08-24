@@ -9,7 +9,8 @@ export const PROFILE = {
     "Saya juga antusias mempelajari teknologi baru, termasuk pemanfaatan AI dalam aplikasi, dan siap berkontribusi dalam tim pengembangan aplikasi yang bermanfaat bagi penggunanya."
   ],
   languages: ["Indonesia — Native", "English — Intermediate"],
-  avatar: "assets/images/avatar-placeholder.svg",
+  avatar: "assets/images/profile.png",
+  avatarAlt: "assets/images/profile1.jpeg",
   socials: {
     github: "https://github.com/aqilahdaffa8",
     linkedin: "https://www.linkedin.com/in/aqilah-daffa-76290a3a4",

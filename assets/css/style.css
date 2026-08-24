@@ -1,16 +1,18 @@
 :root{
-  --bg:#0B1120; --surface:#111827; --surface-2:#0F172A;
-  --border:#1E293B; --accent:#38BDF8; --accent-2:#34D399;
-  --text:#E2E8F0; --text-muted:#94A3B8;
+  --bg:#F7F7F7; --surface:#FFFFFF; --surface-2:#EEEEEE;
+  --border:#DADCDF; --accent:#393E46; --accent-2:#929AAB;
+  --text:#393E46; --text-muted:#7C8393;
 }
 *{ scroll-behavior:smooth; }
 body{
   background-color:var(--bg); color:var(--text);
   font-family:'Inter',sans-serif;
-  background-image: radial-gradient(circle, rgba(56,189,248,0.10) 1px, transparent 1px);
-  background-size: 26px 26px;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  overflow-x:hidden;
 }
-.font-display{ font-family:'Space Grotesk',sans-serif; }
+.font-display{ font-family:'Space Grotesk',sans-serif; font-weight:700; }
+.font-hand{ font-family:'Caveat',cursive; }
 .font-mono{ font-family:'JetBrains Mono',monospace; }
 .surface{ background-color:var(--surface); border:1px solid var(--border); }
 .surface-2{ background-color:var(--surface-2); border:1px solid var(--border); }
@@ -19,25 +21,132 @@ body{
 .text-muted{ color:var(--text-muted); }
 .border-blueprint{ border-color:var(--border); }
 
-.phone-frame{ background:#000; border-radius:2.2rem; padding:10px; box-shadow:0 0 0 2px var(--border); }
-.phone-screen{ background:var(--surface-2); border-radius:1.6rem; overflow:hidden; position:relative; }
-.phone-notch{ position:absolute; top:0; left:50%; transform:translateX(-50%); width:40%; height:18px; background:#000; border-radius:0 0 12px 12px; z-index:10; }
-.status-bar{ display:flex; justify-content:space-between; align-items:center; font-size:10px; font-family:'JetBrains Mono',monospace; color:var(--text-muted); padding:6px 14px 2px; }
+/* ---- Buttons: bentuk "sobekan kertas" ala reference ---- */
+.torn-btn{
+  --cut:14px;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:0.8rem 1.6rem; font-weight:600; font-size:0.9rem;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
+  transition: transform .15s, background .15s, color .15s;
+}
+.torn-btn:hover{ transform: translateY(-2px); }
+.torn-btn-solid{ background:var(--accent); color:#FFFFFF; }
+.torn-btn-solid:hover{ background:#000; }
+.torn-btn-outline{ background:var(--surface); color:var(--accent); border:1.5px solid var(--accent); }
+.torn-btn-outline:hover{ background:var(--surface-2); }
 
-.browser-bar{ display:flex; align-items:center; gap:8px; padding:8px 12px; background:#0B1120; border-bottom:1px solid var(--border); }
-.browser-dot{ width:9px; height:9px; border-radius:50%; }
+.ink-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  border:1.5px solid var(--accent); border-radius:999px;
+  padding:0.65rem 1.4rem; font-weight:600; font-size:0.85rem;
+  color:var(--accent); background:transparent; transition:all .15s;
+}
+.ink-btn:hover{ background:var(--accent); color:#fff; }
+.ink-btn-solid{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  border:1.5px solid var(--accent); border-radius:999px;
+  padding:0.65rem 1.4rem; font-weight:600; font-size:0.85rem;
+  color:#fff; background:var(--accent); transition:all .15s;
+}
+.ink-btn-solid:hover{ background:transparent; color:var(--accent); }
 
-.badge{ font-family:'JetBrains Mono',monospace; font-size:11px; padding:3px 9px; border-radius:999px; border:1px solid var(--border); color:var(--text-muted); background:var(--surface-2); }
+.tag-chip{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:12.5px; font-weight:500; color:var(--text);
+  border:1px solid var(--border); border-radius:999px;
+  padding:5px 12px 5px 8px; background:var(--surface);
+}
+.tag-chip i{ width:13px; height:13px; color:var(--accent-2); }
 
-nav.crumb a{ font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--text-muted); transition:color .15s; }
-nav.crumb a:hover, nav.crumb a.active{ color:var(--accent); }
+.icon-circle{
+  width:38px; height:38px; border-radius:999px; border:1.5px solid var(--border);
+  display:flex; align-items:center; justify-content:center; color:var(--accent);
+  background:var(--surface); flex-shrink:0;
+}
 
-input:focus, textarea:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(56,189,248,0.15); }
+.stat-pill{
+  background:var(--surface); border:1px solid var(--border); border-radius:14px;
+  padding:14px 18px; text-align:center; min-width:88px;
+}
+.stat-pill .num{ font-family:'Caveat',cursive; font-size:1.9rem; line-height:1; color:var(--accent); }
+.stat-pill .label{ font-size:10px; letter-spacing:1px; color:var(--text-muted); text-transform:uppercase; }
 
-.cert-card{ transition: transform .15s, border-color .15s; }
-.cert-card:hover{ transform:translateY(-3px); border-color:var(--accent); }
+.polaroid{
+  background:var(--surface); border:1px solid var(--border);
+  padding:14px 14px 20px; box-shadow:0 10px 24px rgba(0,0,0,0.08);
+  transition:transform .2s;
+}
+.polaroid:hover{ transform:translateY(-4px) rotate(0deg) !important; }
+.rotate-l{ transform:rotate(-1.8deg); }
+.rotate-r{ transform:rotate(1.6deg); }
+
+.tape{
+  position:absolute; top:-10px; left:50%; transform:translateX(-50%) rotate(-3deg);
+  width:70px; height:22px; background:rgba(160,158,148,0.35);
+  border:1px solid rgba(0,0,0,0.05);
+}
+
+.dashed-divider{ border-top:1.5px dashed var(--border); }
+
+.stamp-card{
+  background:var(--surface); border:1px solid var(--border);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+  transition:transform .15s, box-shadow .15s;
+}
+.stamp-card:hover{ transform:translateY(-3px); box-shadow:0 10px 22px rgba(0,0,0,0.08); }
 .cert-hidden{ display:none; }
 
-.edu-dot{ width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px rgba(56,189,248,0.15); }
+/* ---- Nav: underline animasi + ikon ---- */
+nav.crumb{ display:flex; align-items:center; gap:1.75rem; }
+nav.crumb a{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:14px; font-weight:500; color:var(--text-muted);
+  position:relative; padding:6px 2px; transition:color .18s;
+}
+nav.crumb a i{ width:15px; height:15px; }
+nav.crumb a::after{
+  content:""; position:absolute; left:0; bottom:0; height:2px; width:0;
+  background:var(--accent); transition:width .22s ease;
+}
+nav.crumb a:hover{ color:var(--accent); }
+nav.crumb a:hover::after{ width:100%; }
+nav.crumb a.active{ color:var(--accent); }
+nav.crumb a.active::after{ width:100%; }
+
+.logo-bracket{ font-family:'JetBrains Mono',monospace; font-weight:600; }
+.logo-bracket .bracket{ color:var(--accent-2); }
+
+.status-dot{ position:relative; width:8px; height:8px; border-radius:50%; background:var(--accent-2); }
+.status-dot::after{
+  content:""; position:absolute; inset:-4px; border-radius:50%;
+  border:1.5px solid var(--accent-2); opacity:0.6;
+  animation: status-pulse 1.8s ease-out infinite;
+}
+@keyframes status-pulse{ 0%{ transform:scale(0.6); opacity:0.6; } 100%{ transform:scale(1.8); opacity:0; } }
+
+/* ---- Simbol kode mengambang (pengganti doodle) ---- */
+.code-float{
+  position:absolute; z-index:1; pointer-events:none;
+  font-family:'JetBrains Mono',monospace; font-weight:600;
+  color:var(--accent-2); opacity:0.22; user-select:none;
+}
+.code-float-lg{ font-size:2.75rem; }
+.code-float-md{ font-size:1.75rem; }
+
+input:focus, textarea:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,0,0,0.06); }
+
+.edu-dot{ width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px rgba(0,0,0,0.05); }
 
 .page-hero{ padding-top:9rem; padding-bottom:3rem; }
+
+/* ---- Doodle decorations (dekorasi latar, mirip reference) ---- */
+.code-anim{ animation: code-float 5s ease-in-out infinite; }
+@keyframes code-float{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-8px);} }
+
+/* ---- Scroll reveal ---- */
+.reveal{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+.reveal-1{ transition-delay:.05s; }
+.reveal-2{ transition-delay:.15s; }
+.reveal-3{ transition-delay:.25s; }
+.reveal-4{ transition-delay:.35s; }
