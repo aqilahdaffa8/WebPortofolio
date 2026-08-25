@@ -2,7 +2,7 @@ export function renderSkills(skills) {
   const chips = arr => arr.map(s => `<span class="tag-chip"><i data-lucide="hash"></i>${s}</span>`).join("");
 
   return `
-  <section id="skills" class="max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
+  <section id="skills" class="relative overflow-hidden max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
     <p class="font-hand text-2xl accent-2 mb-1 reveal">perkakas sehari-hari</p>
     <h2 class="font-display text-4xl mb-10 reveal">Skills & Tools</h2>
 

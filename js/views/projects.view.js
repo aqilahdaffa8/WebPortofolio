@@ -23,7 +23,7 @@ export function renderProjectCard(project, index = 0) {
       </div>
       ${thumbsHtml}
     </div>
-    <div class="surface rounded-xl p-6 flex flex-col flex-1 -mt-1">
+    <div class="surface rounded-xl p-6 flex flex-col flex-1 -mt-1 tilt-card">
       <h3 class="font-display text-3xl mb-2">${project.title}</h3>
       <p class="text-sm text-muted mb-4">${project.description}</p>
       <div class="mt-auto">

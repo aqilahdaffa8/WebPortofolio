@@ -1,6 +1,6 @@
 export function renderCertificateCard(cert, hidden = false, index = 0) {
   return `
-  <div class="cert-card stamp-card overflow-hidden reveal reveal-${(index % 3) + 1} ${hidden ? "cert-hidden" : ""}" data-cert-id="${cert.id}">
+  <div class="cert-card stamp-card tilt-card overflow-hidden reveal reveal-${(index % 3) + 1} ${hidden ? "cert-hidden" : ""}" data-cert-id="${cert.id}">
     <img src="${cert.image}" alt="Sertifikat ${cert.title}" class="w-full aspect-[400/280] object-cover border-b border-blueprint">
     <div class="p-4">
       <p class="text-sm font-medium leading-snug">${cert.title}</p>

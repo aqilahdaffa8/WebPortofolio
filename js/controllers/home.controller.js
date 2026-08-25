@@ -10,9 +10,13 @@ import { renderSkills } from "../views/skills.view.js";
 import { renderContact } from "../views/contact.view.js";
 import { renderProjectsGrid, initThumbnailSwitcher } from "../views/projects.view.js";
 import { renderCertificatesGrid } from "../views/certificates.view.js";
+import { renderMarquee } from "../views/marquee.view.js";
 
 import { initContactForm } from "./contact.controller.js";
 import { initScrollReveal } from "./reveal.controller.js";
+import { initCustomCursor } from "./cursor.controller.js";
+import { initTiltCards } from "./tilt.controller.js";
+import { initNavSpy } from "./navspy.controller.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("nav-root").innerHTML = renderNav("home");
@@ -23,13 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
     certificates: CERTIFICATES.length
   });
   document.getElementById("about-root").innerHTML = renderAbout(PROFILE);
+  document.getElementById("marquee-root").innerHTML = renderMarquee(SKILLS);
   document.getElementById("skills-root").innerHTML = renderSkills(SKILLS);
   document.getElementById("contact-root").innerHTML = renderContact(PROFILE);
   initContactForm(PROFILE.formEndpoint);
 
   // Featured preview — hanya 2 proyek utama, sisanya di halaman penuh
   document.getElementById("projects-preview-root").innerHTML = `
-    <section class="max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
+    <section id="projects-preview" class="relative overflow-hidden max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
       <p class="font-hand text-2xl accent-2 mb-1 reveal">beberapa karya</p>
       <div class="flex items-end justify-between mb-10 flex-wrap gap-3">
         <h2 class="font-display text-4xl reveal">Proyek Mobile & Web <span class="text-muted text-2xl">(${PROJECTS.length})</span></h2>
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Featured preview sertifikat — hanya 3 yang tampil di beranda
   document.getElementById("certificates-preview-root").innerHTML = `
-    <section class="max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
+    <section id="certificates-preview" class="relative overflow-hidden max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
       <p class="font-hand text-2xl accent-2 mb-1 reveal">koleksi sertifikat</p>
       <div class="flex items-end justify-between mb-10 flex-wrap gap-3">
         <h2 class="font-display text-4xl reveal">Sertifikasi <span class="text-muted text-2xl">(${CERTIFICATES.length})</span></h2>
@@ -52,4 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   lucide.createIcons();
   initThumbnailSwitcher();
   initScrollReveal();
+  initCustomCursor();
+  initTiltCards();
+  initNavSpy("home");
 });

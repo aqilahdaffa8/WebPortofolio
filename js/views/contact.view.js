@@ -1,6 +1,6 @@
 export function renderContact(profile) {
   return `
-  <section id="contact" class="max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
+  <section id="contact" class="relative overflow-hidden max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
     <p class="font-hand text-2xl accent-2 mb-1 reveal">ngobrol yuk</p>
     <h2 class="font-display text-4xl mb-10 reveal">Mari Berkolaborasi</h2>
 

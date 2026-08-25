@@ -7,8 +7,10 @@
 body{
   background-color:var(--bg); color:var(--text);
   font-family:'Inter',sans-serif;
-  background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image:
+    linear-gradient(rgba(57,62,70,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57,62,70,0.07) 1px, transparent 1px);
+  background-size: 34px 34px;
   overflow-x:hidden;
 }
 .font-display{ font-family:'Space Grotesk',sans-serif; font-weight:700; }
@@ -93,28 +95,31 @@ body{
   clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
   transition:transform .15s, box-shadow .15s;
 }
-.stamp-card:hover{ transform:translateY(-3px); box-shadow:0 10px 22px rgba(0,0,0,0.08); }
+.stamp-card:hover{ box-shadow:0 10px 22px rgba(0,0,0,0.08); }
 .cert-hidden{ display:none; }
 
-/* ---- Nav: underline animasi + ikon ---- */
-nav.crumb{ display:flex; align-items:center; gap:1.75rem; }
-nav.crumb a{
-  display:inline-flex; align-items:center; gap:6px;
-  font-size:14px; font-weight:500; color:var(--text-muted);
-  position:relative; padding:6px 2px; transition:color .18s;
-}
-nav.crumb a i{ width:15px; height:15px; }
-nav.crumb a::after{
-  content:""; position:absolute; left:0; bottom:0; height:2px; width:0;
-  background:var(--accent); transition:width .22s ease;
-}
-nav.crumb a:hover{ color:var(--accent); }
-nav.crumb a:hover::after{ width:100%; }
-nav.crumb a.active{ color:var(--accent); }
-nav.crumb a.active::after{ width:100%; }
+/* ---- Nav: profesional, indikator geser otomatis ---- */
+.site-header{ transition: box-shadow .25s ease, background-color .25s ease; }
+.site-header.scrolled{ box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 10px 24px rgba(57,62,70,0.06); }
 
-.logo-bracket{ font-family:'JetBrains Mono',monospace; font-weight:600; }
-.logo-bracket .bracket{ color:var(--accent-2); }
+.wordmark{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:-0.01em; color:var(--text); }
+.wordmark .dot{ color:var(--accent-2); }
+
+nav.crumb{ position:relative; display:flex; align-items:center; gap:2rem; }
+nav.crumb a{
+  font-size:14px; font-weight:500; color:var(--text-muted);
+  padding:8px 0; transition:color .18s;
+}
+nav.crumb a:hover{ color:var(--text); }
+nav.crumb a.active{ color:var(--accent); font-weight:600; }
+
+.nav-indicator{
+  position:absolute; bottom:0; height:2px; left:0; width:0;
+  background:var(--accent); border-radius:2px;
+  transition: left .28s cubic-bezier(.4,0,.2,1), width .28s cubic-bezier(.4,0,.2,1), opacity .2s;
+  opacity:0;
+}
+.nav-indicator.is-visible{ opacity:1; }
 
 .status-dot{ position:relative; width:8px; height:8px; border-radius:50%; background:var(--accent-2); }
 .status-dot::after{
@@ -124,24 +129,47 @@ nav.crumb a.active::after{ width:100%; }
 }
 @keyframes status-pulse{ 0%{ transform:scale(0.6); opacity:0.6; } 100%{ transform:scale(1.8); opacity:0; } }
 
-/* ---- Simbol kode mengambang (pengganti doodle) ---- */
-.code-float{
-  position:absolute; z-index:1; pointer-events:none;
-  font-family:'JetBrains Mono',monospace; font-weight:600;
-  color:var(--accent-2); opacity:0.22; user-select:none;
+
+/* ---- Watermark teks besar (pengganti doodle) ---- */
+.watermark{
+  position:absolute; z-index:0; pointer-events:none; user-select:none;
+  font-family:'Space Grotesk',sans-serif; font-weight:700;
+  color:transparent; -webkit-text-stroke:1.5px var(--border);
+  white-space:nowrap; line-height:1;
 }
-.code-float-lg{ font-size:2.75rem; }
-.code-float-md{ font-size:1.75rem; }
+
+/* ---- Marquee tech stack ---- */
+.marquee-wrap{ overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--surface); }
+.marquee-track{ display:flex; width:max-content; animation: marquee-scroll 26s linear infinite; }
+.marquee-track:hover{ animation-play-state:paused; }
+.marquee-item{
+  display:flex; align-items:center; gap:10px;
+  font-family:'JetBrains Mono',monospace; font-size:0.95rem; font-weight:600;
+  color:var(--text-muted); padding:1.1rem 2rem; white-space:nowrap;
+}
+.marquee-item .dot{ width:5px; height:5px; border-radius:50%; background:var(--accent-2); }
+@keyframes marquee-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+/* ---- Tilt micro-interaction (kartu proyek/sertifikat) ---- */
+.tilt-card{ transition: transform .06s linear; transform-style:preserve-3d; will-change:transform; }
+.reveal.tilt-card{ transition: opacity .6s ease, transform .06s linear; }
+
+/* ---- Custom cursor ---- */
+.cursor-dot{
+  position:fixed; top:0; left:0; width:10px; height:10px; border-radius:50%;
+  background:var(--accent); pointer-events:none; z-index:9999;
+  transform:translate(-50%,-50%); transition:width .18s,height .18s,background .18s,opacity .18s;
+  opacity:0;
+}
+.cursor-dot.is-active{ opacity:1; }
+.cursor-dot.is-hover{ width:34px; height:34px; background:transparent; border:1.5px solid var(--accent); }
+@media (hover:none){ .cursor-dot{ display:none; } }
 
 input:focus, textarea:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,0,0,0.06); }
 
 .edu-dot{ width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px rgba(0,0,0,0.05); }
 
 .page-hero{ padding-top:9rem; padding-bottom:3rem; }
-
-/* ---- Doodle decorations (dekorasi latar, mirip reference) ---- */
-.code-anim{ animation: code-float 5s ease-in-out infinite; }
-@keyframes code-float{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-8px);} }
 
 /* ---- Scroll reveal ---- */
 .reveal{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }

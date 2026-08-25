@@ -2,8 +2,7 @@ export function renderHero(profile, stats) {
   return `
   <section id="hero" class="relative max-w-6xl mx-auto px-5 md:px-8 pt-36 pb-24 grid md:grid-cols-5 gap-12 items-center overflow-hidden">
 
-    <span class="code-float code-float-lg code-anim hidden md:block" style="top:14px; right:6%;">&lt;/&gt;</span>
-    <span class="code-float code-float-md code-anim hidden md:block" style="bottom:10px; left:4%; animation-delay:1.2s;">{ }</span>
+    <span class="watermark hidden md:block" style="font-size:9rem; top:-10px; left:-10px;">CODE</span>
 
     <div class="md:col-span-3 relative z-10 reveal is-visible">
       <p class="font-hand text-2xl accent-2 mb-1">Halo, saya</p>
@@ -25,7 +24,7 @@ export function renderHero(profile, stats) {
       <div class="polaroid rotate-r relative mx-auto" style="max-width:260px;">
         <div class="tape"></div>
         <img src="${profile.avatar}" alt="${profile.name}" class="w-full aspect-[4/5] object-cover">
-        <p class="font-hand text-xl text-center mt-3 text-muted">Muhammad Aqilah</p>
+        <p class="font-hand text-xl text-center mt-3 text-muted">${profile.name.split(" ")[0]} ${profile.name.split(" ")[1]}</p>
       </div>
       <div class="flex gap-3 justify-center mt-6">
         <div class="stat-pill"><div class="num">${stats.projects}</div><div class="label">Proyek</div></div>
