@@ -27,7 +27,7 @@ export function renderHero(profile, stats) {
         <p class="font-hand text-xl text-center mt-3 text-muted">${profile.name.split(" ")[0]} ${profile.name.split(" ")[1]}</p>
       </div>
       <div class="flex gap-3 justify-center mt-6">
-        <div class="stat-pill"><div class="num">${stats.projects}</div><div class="label">Proyek</div></div>
+        <div class="stat-pill"><div class="num">${stats.projects}+</div><div class="label">Proyek</div></div>
         <div class="stat-pill"><div class="num">${stats.certificates}</div><div class="label">Sertifikat</div></div>
       </div>
     </div>
