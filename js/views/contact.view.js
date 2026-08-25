@@ -62,7 +62,7 @@ export function renderContact(profile) {
           <label class="text-xs text-muted uppercase tracking-wide block mb-2">Pesan</label>
           <textarea name="message" required rows="5" class="w-full surface-2 rounded-lg px-4 py-3 text-sm border border-blueprint" placeholder="Tuliskan pesan Anda..."></textarea>
         </div>
-        <button type="submit" id="contact-submit" class="torn-btn torn-btn-solid w-full">Kirim Pesan ✎</button>
+        <button type="submit" id="contact-submit" class="torn-btn torn-btn-solid w-full">Kirim Pesan</button>
         <p id="contact-status" class="text-sm mt-2"></p>
       </form>
     </div>
