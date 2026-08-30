@@ -2,7 +2,9 @@ export const PROJECTS = [
   {
     id: "smart-budget",
     title: "Smart Budget",
-    description: "Aplikasi pencatatan keuangan berbasis Flutter dengan fitur pencatatan pemasukan, pengeluaran, dan manajemen data lokal.",
+    category: "mobile",
+    description:
+      "Aplikasi pencatatan keuangan berbasis Flutter dengan fitur pencatatan pemasukan, pengeluaran, dan manajemen data lokal.",
     tech: ["Flutter", "Dart", "Firebase"],
     images: [
       "assets/images/projects/smartbudget0.jpeg",
@@ -14,40 +16,14 @@ export const PROJECTS = [
       "assets/images/projects/smartbudget6.jpeg",
       "assets/images/projects/smartbudget7.jpeg",
     ],
-    repoUrl: "https://github.com/aqilahdaffa8/smart_budget"
-  },
-  {
-    id: "catatan-ai",
-    title: "Catatan AI",
-    description: "Aplikasi pencatatan berbasis Flutter yang terintegrasi AI untuk meringkas teks, analisis otomatis, dan pengelolaan catatan yang lebih cerdas.",
-    tech: ["Flutter", "Dart", "Hive", "AI"],
-    images: [
-      "assets/images/projects/catatan-ai-4.jpg",
-      "assets/images/projects/catatan-ai-1.jpg",
-      "assets/images/projects/catatan-ai-2.jpg",
-      "assets/images/projects/catatan-ai-3.jpg"
-    ],
-    repoUrl: "https://github.com/aqilahdaffa8/Catatan_AI"
-  },
-  {
-    id: "cinemax",
-    title: "Cinemax",
-    description: "Aplikasi penjelajah katalog cinema untuk mencari judul film, melihat detail, dan mengeksplorasi referensi film.",
-    tech: ["Flutter", "Dart", "Shared Preferences", "TMDB API"],
-    images: [
-      "assets/images/projects/cinemax0.jpeg",
-      "assets/images/projects/cinemax1.jpeg",
-      "assets/images/projects/cinemax2.jpeg",
-      "assets/images/projects/cinemax3.jpeg",
-      "assets/images/projects/cinemax4.jpeg",
-      "assets/images/projects/cinemax5.jpeg",
-    ],
-    repoUrl: "https://github.com/aqilahdaffa8/movie_explorer"
+    repoUrl: "https://github.com/aqilahdaffa8/smart_budget",
   },
   {
     id: "quickpos",
     title: "QuickPOS",
-    description: "Sistem Point of Sale (POS) offline untuk mendukung pencatatan transaksi, laporan omset dinamis, serta pembuatan struk digital (PDF) dan fisik (Thermal).",
+    category: "mobile",
+    description:
+      "Sistem Point of Sale (POS) offline untuk mendukung pencatatan transaksi, laporan omset dinamis, serta pembuatan struk digital (PDF) dan fisik (Thermal).",
     tech: ["Flutter", "Dart", "SQLite", "Provider"],
     images: [
       "assets/images/projects/quickpos1.jpeg",
@@ -59,6 +35,56 @@ export const PROJECTS = [
       "assets/images/projects/quickpos7.jpeg",
       "assets/images/projects/quickpos8.jpeg",
     ],
-    repoUrl: "https://github.com/aqilahdaffa8/quickpos"
+    repoUrl: "https://github.com/aqilahdaffa8/quickpos",
+  },
+  {
+    id: "catatan-ai",
+    title: "Catatan AI",
+    category: "mobile",
+    description:
+      "Aplikasi pencatatan berbasis Flutter yang terintegrasi AI untuk meringkas teks, analisis otomatis, dan pengelolaan catatan yang lebih cerdas.",
+    tech: ["Flutter", "Dart", "Hive", "AI"],
+    images: [
+      "assets/images/projects/catatan-ai-4.jpg",
+      "assets/images/projects/catatan-ai-1.jpg",
+      "assets/images/projects/catatan-ai-2.jpg",
+      "assets/images/projects/catatan-ai-3.jpg",
+    ],
+    repoUrl: "https://github.com/aqilahdaffa8/Catatan_AI",
+  },
+  {
+    id: "cinemax",
+    title: "Cinemax",
+    category: "mobile",
+    description:
+      "Aplikasi penjelajah katalog cinema untuk mencari judul film, melihat detail, dan mengeksplorasi referensi film.",
+    tech: ["Flutter", "Dart", "Shared Preferences", "TMDB API"],
+    images: [
+      "assets/images/projects/cinemax0.jpeg",
+      "assets/images/projects/cinemax1.jpeg",
+      "assets/images/projects/cinemax2.jpeg",
+      "assets/images/projects/cinemax3.jpeg",
+      "assets/images/projects/cinemax4.jpeg",
+      "assets/images/projects/cinemax5.jpeg",
+    ],
+    repoUrl: "https://github.com/aqilahdaffa8/movie_explorer",
+  },
+  {
+    id: "creart",
+    title: "CreArt — Creative Agency",
+    category: "web",
+    description:
+      "Website Company Profile modern dan interaktif dengan konsep high-contrast dark/light theme dan aksen neon green. Menampilkan layanan agensi, portofolio terfilter dengan animasi mulus, serta formulir kontak interaktif.",
+    tech: [
+      "Next.js 15",
+      "React 18",
+      "Tailwind CSS",
+      "TypeScript",
+      "Framer Motion",
+      "Lucide React",
+    ],
+    images: ["assets/images/projects/creart1.png"],
+    repoUrl: "https://github.com/aqilahdaffa8/CreArt_ComponyProfile",
+    demoUrl: "https://creart-componyprofile.vercel.app/",
   },
 ];

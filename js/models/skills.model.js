@@ -1,4 +1,5 @@
 export const SKILLS = {
-  programming: ["Dart", "PHP", "JavaScript", "Java", "C++", "Python"],
-  framework: ["Flutter", "MySQL", "SQLite", "Hive", "Supabase", "Firebase", "Git & GitHub", "REST API"]
+  programming: ["Dart", "TypeScript", "JavaScript", "PHP", "Java", "C++", "Python"],
+  framework: ["Flutter", "Next.js", "React", "Tailwind CSS", "Firebase", "Supabase", "SQLite", "Hive", "Git & GitHub", "REST API"]
 };
+
