@@ -74,7 +74,7 @@ export const PROJECTS = [
     title: "CreArt — Creative Agency",
     category: "web",
     description:
-      "Website Company Profile modern dan interaktif dengan konsep high-contrast dark/light theme dan aksen neon green. Menampilkan layanan agensi, portofolio terfilter dengan animasi mulus, serta formulir kontak interaktif.",
+      "Website Company Profile modern untuk agensi kreatif & digital marketing. Dibangun menggunakan Next.js 15, Tailwind CSS, dan Framer Motion.",
     tech: [
       "Next.js 15",
       "React 18",
