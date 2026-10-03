@@ -1,70 +1,97 @@
+const ICON_GITHUB = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>`;
+const ICON_LINKEDIN = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`;
+const ICON_MAIL_LG = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`;
+const ICON_ARROW_UP_RIGHT_LG = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>`;
+const ICON_SEND = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>`;
+
 export function renderContact(profile) {
   return `
-  <section id="contact" class="relative overflow-hidden max-w-6xl mx-auto px-5 md:px-8 py-24 border-t border-blueprint">
-    <p class="font-hand text-2xl accent-2 mb-1 reveal">ngobrol yuk</p>
-    <h2 class="font-display text-4xl mb-10 reveal">Mari Berkolaborasi</h2>
+  <section id="contact" class="relative z-20 px-6 py-28 sm:px-10 sm:py-36 lg:px-20 bg-[#09090b] border-t border-white/10 overflow-hidden">
+    
+    <!-- Background Watermark -->
+    <div class="section-watermark text-[clamp(6rem,18vw,16rem)] top-12">
+      CONTACT
+    </div>
 
-    <div class="grid md:grid-cols-5 gap-8">
-      <div class="md:col-span-2 surface rounded-2xl p-7 reveal reveal-1">
-        <p class="font-hand text-2xl accent mb-2">Say Hello</p>
-        <p class="text-sm text-muted mb-6">Terbuka untuk peluang magang & kolaborasi proyek — drop pesan kapan saja.</p>
+    <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+      
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-white/50 mb-4">Get in touch</p>
+      
+      <h2 class="font-serif text-5xl sm:text-7xl lg:text-8xl leading-none text-white tracking-tight mb-8">
+        Let's Work <span class="italic font-normal">Together.</span>
+      </h2>
 
-        <div class="space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="icon-circle"><i data-lucide="mail" class="w-4 h-4"></i></div>
-            <div><p class="text-[10px] text-muted uppercase tracking-wide">Email</p><p class="text-sm font-medium">${profile.socials.email}</p></div>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="icon-circle">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.7 1.25 3.36.95.1-.75.4-1.25.73-1.53-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.74.8 1.18 1.82 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.2.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            </div>
-            <div><p class="text-[10px] text-muted uppercase tracking-wide">GitHub</p><p class="text-sm font-medium">${profile.socials.github.replace("https://", "")}</p></div>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="icon-circle">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45Z"/></svg>
-            </div>
-            <div><p class="text-[10px] text-muted uppercase tracking-wide">LinkedIn</p><p class="text-sm font-medium">${profile.socials.linkedin.replace("https://", "")}</p></div>
-          </div>
-        </div>
+      <p class="text-sm sm:text-base leading-relaxed text-white/60 max-w-xl mb-12">
+        Tertarik untuk berkolaborasi, mendiskusikan peluang proyek, atau sekadar bertukar sapa? Pintu saya selalu terbuka untuk koneksi baru.
+      </p>
 
-        <div class="dashed-divider my-6"></div>
+      <!-- Direct Big Email Pill Button -->
+      <a 
+        href="mailto:${profile.socials.email}" 
+        class="inline-flex items-center gap-3 px-8 py-4 sm:px-10 sm:py-5 rounded-full bg-white text-black font-mono text-sm sm:text-base font-semibold tracking-wide hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-[0_12px_40px_rgba(255,255,255,0.18)] mb-14"
+      >
+        ${ICON_MAIL_LG}
+        <span>${profile.socials.email}</span>
+        ${ICON_ARROW_UP_RIGHT_LG}
+      </a>
 
-        <div class="flex gap-3">
-          <a href="${profile.socials.github}" target="_blank" class="icon-circle hover:bg-[var(--surface-2)] transition">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.7 1.25 3.36.95.1-.75.4-1.25.73-1.53-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.74.8 1.18 1.82 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.2.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-          </a>
-          <a href="${profile.socials.linkedin}" target="_blank" class="icon-circle hover:bg-[var(--surface-2)] transition">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45Z"/></svg>
-          </a>
-          <a href="mailto:${profile.socials.email}" target="_blank" class="icon-circle hover:bg-[var(--surface-2)] transition">
-            <i data-lucide="mail" class="w-4 h-4"></i>
-          </a>
-        </div>
+      <!-- Quick Social Links (Pill Style) -->
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-16">
+        <a 
+          href="${profile.socials.github}" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 bg-white/[0.04] text-xs font-mono text-white/80 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all"
+        >
+          ${ICON_GITHUB}
+          <span>GitHub</span>
+        </a>
+        <a 
+          href="${profile.socials.linkedin}" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 bg-white/[0.04] text-xs font-mono text-white/80 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all"
+        >
+          ${ICON_LINKEDIN}
+          <span>LinkedIn</span>
+        </a>
+        <a 
+          href="mailto:${profile.socials.email}" 
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 bg-white/[0.04] text-xs font-mono text-white/80 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all"
+        >
+          ${ICON_SEND}
+          <span>Direct Message</span>
+        </a>
       </div>
 
-      <form id="contact-form" class="md:col-span-3 surface rounded-2xl p-7 space-y-4 reveal reveal-2">
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <label class="text-xs text-muted uppercase tracking-wide block mb-2">Nama</label>
-            <input type="text" name="name" required class="w-full surface-2 rounded-lg px-4 py-3 text-sm border border-blueprint" placeholder="Nama Anda">
+      <!-- Quick Message Form -->
+      <div class="w-full max-w-2xl text-left p-8 sm:p-10 rounded-[2rem] border border-white/10 bg-[#121215]/80 backdrop-blur-md shadow-2xl">
+        <h3 class="text-xl font-semibold text-white mb-2">Kirim Pesan Cepat</h3>
+        <p class="text-xs text-white/50 mb-6">Pesan ini akan langsung terkirim ke inbox email saya.</p>
+
+        <form id="contact-form" class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-mono text-[10px] uppercase tracking-wider text-white/50 mb-2">Nama</label>
+              <input type="text" name="name" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/25 text-sm focus:outline-none focus:border-white/40 transition-colors">
+            </div>
+            <div>
+              <label class="block font-mono text-[10px] uppercase tracking-wider text-white/50 mb-2">Email</label>
+              <input type="email" name="email" required placeholder="nama@email.com" class="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/25 text-sm focus:outline-none focus:border-white/40 transition-colors">
+            </div>
           </div>
           <div>
-            <label class="text-xs text-muted uppercase tracking-wide block mb-2">Email</label>
-            <input type="email" name="email" required class="w-full surface-2 rounded-lg px-4 py-3 text-sm border border-blueprint" placeholder="nama@email.com">
+            <label class="block font-mono text-[10px] uppercase tracking-wider text-white/50 mb-2">Pesan</label>
+            <textarea name="message" required rows="4" placeholder="Tuliskan pesan atau detail proyek..." class="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/25 text-sm focus:outline-none focus:border-white/40 transition-colors"></textarea>
           </div>
-        </div>
-        <div>
-          <label class="text-xs text-muted uppercase tracking-wide block mb-2">Subjek</label>
-          <input type="text" name="subject" class="w-full surface-2 rounded-lg px-4 py-3 text-sm border border-blueprint" placeholder="Tentang apa pesan ini?">
-        </div>
-        <div>
-          <label class="text-xs text-muted uppercase tracking-wide block mb-2">Pesan</label>
-          <textarea name="message" required rows="5" class="w-full surface-2 rounded-lg px-4 py-3 text-sm border border-blueprint" placeholder="Tuliskan pesan Anda..."></textarea>
-        </div>
-        <button type="submit" id="contact-submit" class="torn-btn torn-btn-solid w-full">Kirim Pesan</button>
-        <p id="contact-status" class="text-sm mt-2"></p>
-      </form>
+          <button type="submit" id="contact-submit" class="w-full py-3.5 rounded-xl bg-white text-black font-mono text-xs font-bold uppercase tracking-wider hover:bg-white/90 transition-all flex items-center justify-center gap-2">
+            <span>Kirim Pesan Sekarang</span>
+            ${ICON_SEND}
+          </button>
+          <p id="contact-status" class="text-xs text-center mt-2"></p>
+        </form>
+      </div>
+
     </div>
   </section>`;
 }
