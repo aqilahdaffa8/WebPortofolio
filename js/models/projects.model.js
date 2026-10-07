@@ -130,5 +130,32 @@ export const PROJECTS = [
       "assets/images/projects/cinemax5.jpeg"
     ],
     repoUrl: "https://github.com/aqilahdaffa8/movie_explorer"
-  }
+  },
+  {
+    id: "Stickman",
+    number: "06",
+    title: "Stickman Arena — 2D Combat Platformer",
+    subtitle: "Fast-Paced 2D Arena Shooter & Wave Survival Game",
+    role: "Game Developer & Frontend Engineer",
+    category: "web",
+    description:
+      "Game 2D action yang dilengkapi custom 2D physics engine, sistem parkour dan jump pad bertingkat, animasi karakter prosedural, mekanika tembak-menembak proyektil balistik, serta gelombang musuh adaptif berbasis state machine.",
+    highlights: [
+      "Custom 2D Physics Engine with coyote time, double jump, jump-through ledges, and calibrated jump pads",
+      "Procedural stickman rendering and weapon aiming with real-time inverse kinematics on HTML5 Canvas",
+      "Dynamic combat system featuring melee weapons, firearms, grenades, hit reactions, and screen shake",
+      "Finite state machine (FSM) enemy AI with distinct enemy classes, pathfinding, and wave progression",
+    ],
+    tech: [
+      "React",
+      "TypeScript",
+      "HTML5 Canvas API",
+      "Web Audio API",
+      "Tailwind CSS",
+      "Google AI"
+    ],
+    images: ["assets/images/projects/stickman1.png"],
+    repoUrl: "http://github.com/aqilahdaffa8/Game-Stickman",
+    demoUrl: "https://game-stickman.vercel.app/"
+  },
 ];
