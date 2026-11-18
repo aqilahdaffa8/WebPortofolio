@@ -16,7 +16,7 @@ export const PROFILE = {
   socials: {
     github: "https://github.com/aqilahdaffa8",
     linkedin: "https://www.linkedin.com/in/aqilah-daffa-76290a3a4",
-    email: "aqilahdaffa8@email.com",
+    email: "aqilahdaffa8@gmail.com",
     resume: "#"
   },
   formEndpoint: "https://formspree.io/f/xrenwlwl"

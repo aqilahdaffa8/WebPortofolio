@@ -74,7 +74,7 @@ export function renderNav(activePage = "home") {
           <span>LINKEDIN</span>
         </a>
         <span>·</span>
-        <a href="mailto:aqilahdaffa8@email.com" class="flex items-center gap-1.5 hover:text-white transition-colors">
+        <a href="mailto:aqilahdaffa8@gmail.com" class="flex items-center gap-1.5 hover:text-white transition-colors">
           ${ICON_MAIL}
           <span>EMAIL</span>
         </a>
